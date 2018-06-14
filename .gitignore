@@ -23,6 +23,9 @@
 # Compiled python
 *.pyc
 
+# Numpy data files
+data/code/*/*.npy
+
 # Compiled MATLAB
 *.mex*
 
