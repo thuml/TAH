@@ -926,7 +926,6 @@ message MVNParameter {
 // Message that stores parameters used by Pairwise loss
 message PairwiseParameter {
   optional float threshold = 1 [default = -1];
-  optional uint32 method = 2 [default = 0]; //1 for dhn 0 for tsne
 }
 
 message ParameterParameter {

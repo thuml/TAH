@@ -10,7 +10,6 @@ template <typename Dtype>
 void PairwiseLossLayer<Dtype>::LayerSetUp(
     const vector<Blob<Dtype>*>& bottom, const vector<Blob<Dtype>*>& top) {
   LossLayer<Dtype>::LayerSetUp(bottom, top);
-  method = this->layer_param_.pairwise_param().method();
   threshold_ = this->layer_param_.pairwise_param().threshold();
   loss_weight_ = this->layer_param_.loss_weight(0);
 }
@@ -29,9 +28,6 @@ void PairwiseLossLayer<Dtype>::Reshape(
   loss_.Reshape(1, 1, outer_num_, outer_num_);
   temp_.Reshape(1, 1, outer_num_, outer_num_);
   tsne_.Reshape(1, 1, outer_num_, outer_num_);
-  diff2_.Reshape(1, 1, outer_num_, outer_num_);
-  diff3_.Reshape(1, 1, outer_num_, inner_num_);
-  //LOG(INFO)<<"huang chao debug outer="<<outer_num_<<" inner_num_"<<inner_num_;
 }
 
 template <typename Dtype>

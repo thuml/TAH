@@ -35,12 +35,9 @@ class PairwiseLossLayer : public LossLayer<Dtype> {
       const vector<bool>& propagate_down, const vector<Blob<Dtype>*>& bottom);
   virtual void Backward_gpu(const vector<Blob<Dtype>*>& top,
       const vector<bool>& propagate_down, const vector<Blob<Dtype>*>& bottom);
-  int method;
   Blob<Dtype> pairwise_sim_;
   Blob<Dtype> loss_;
   Blob<Dtype> temp_;
-  Blob<Dtype> diff2_;  //1/(1+sum) to sum gradient
-  Blob<Dtype> diff3_;  //sum to hash_bit gradient
   Blob<Dtype> tsne_;
   int outer_num_, inner_num_, label_dim_;
   Dtype threshold_;
