@@ -49,11 +49,19 @@ python models/predict/predict.py --code_path real --load_code True
 ## Citation
 If you use this code for your research, please consider citing:
 ```
-@article{cao2017hashnet,
-  title={HashNet: Deep Learning to Hash by Continuation},
-  author={Cao, Zhangjie and Long, Mingsheng and Wang, Jianmin and Yu, Philip S},
-  journal={arXiv preprint arXiv:1702.00758},
-  year={2017}
+@inproceedings{DBLP:conf/aaai/CaoLH018,
+  author    = {Zhangjie Cao and
+               Mingsheng Long and
+               Chao Huang and
+               Jianmin Wang},
+  title     = {Transfer Adversarial Hashing for Hamming Space Retrieval},
+  booktitle = {Proceedings of the Thirty-Second {AAAI} Conference on Artificial Intelligence,
+               New Orleans, Louisiana, USA, February 2-7, 2018},
+  year      = {2018},
+  url       = {https://www.aaai.org/ocs/index.php/AAAI/AAAI18/paper/view/17256},
+  timestamp = {Thu, 03 May 2018 17:03:19 +0200},
+  biburl    = {https://dblp.org/rec/bib/conf/aaai/CaoLH018},
+  bibsource = {dblp computer science bibliography, https://dblp.org}
 }
 ```
 ## Contact
