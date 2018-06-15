@@ -53,9 +53,6 @@ def mean_average_precision(params):
     R = params['R']
     query_num = validation_code.shape[0]
     
-    database_code = np.sign(database_code)
-    validation_code = np.sign(validation_code)
-
     sim = np.dot(database_code, validation_code.T)
     ids = np.argsort(-sim, axis=0)
     APx = []
@@ -260,7 +257,7 @@ def get_codes_and_labels(params):
         if len(lines) < batch_size:
             break;
         
-    return dict(database_code=np.sign(database_code), database_label=database_label, validation_code=np.sign(validation_code), validation_label=validation_label)
+    return dict(database_code=database_code, database_label=database_label, validation_code=validation_code, validation_label=validation_label)
 
 
 if __name__ == "__main__":
@@ -318,9 +315,12 @@ if __name__ == "__main__":
             [code_and_label['database_label'].append(c) for c in results[i]['database_label']]
             [code_and_label['validation_code'].append(c) for c in results[i]['validation_code']]
             [code_and_label['validation_label'].append(c) for c in results[i]['validation_label']]
+        code_and_label['database_code'] = np.sign(np.array(code_and_label["database_code"]))
+        code_and_label['validation_code'] = np.sign(np.array(code_and_label["validation_code"]))
+
         code_and_label['path'] = "./data/code/"+args.code_path
         if not osp.exists(code_and_label['path']):
-            os.mkdir(code_and_label['path'])
+            os.system("mkdir -p " + code_and_label['path'])
         save_code_and_label(code_and_label)
     else:
         code_and_label = load_code_and_label("./data/code/"+args.code_path)

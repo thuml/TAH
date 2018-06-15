@@ -13,7 +13,7 @@ layer {
     source: "data/nus_wide/train.txt"
     batch_size: 64
     shuffle: true
-    label_num: 81
+    label_num: 21
     new_height: 256
     new_width: 256
   }
@@ -358,7 +358,7 @@ layer {
   bottom: "hash_layer"
   bottom: "label"
   top: "pairwise_loss"
-  loss_weight: 10
+  loss_weight: 1.0
   pairwise_param {
     threshold :15.0 
   }
@@ -368,7 +368,7 @@ layer {
   type: "QuantizationLoss"
   bottom: "hash_layer"
   top: "quantization_loss"
-  loss_weight: 0.8
+  loss_weight: 0.3
   quantization_param {
     threshold: 15
   }

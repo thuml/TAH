@@ -1,5 +1,5 @@
 net: "models/train/nus_wide/train.prototxt"
-base_lr: 0.00002
+base_lr: 0.0002
 lr_policy: "step"
 gamma: 0.5
 stepsize: 500
