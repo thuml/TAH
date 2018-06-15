@@ -39,7 +39,7 @@ You can evaluate the Mean Average Precision(MAP) result on each dataset using th
 ```
 python models/predict/predict.py --gpu_id 1,2,3 --nthreads 4 --database_path data/visda/real_database_list.txt --test_path data/visda/real_test_list.txt --code_path real --snapshot_path models/train/caffemodel/synthetic_48bit.caffemodel
 ```
-We provide some trained models for each dataset for each code length in our experiment for evaluation. You can download them [here]() if you want to use them.
+We provide some trained models for each dataset for each code length in our experiment for evaluation. You can download them [here](https://drive.google.com/drive/folders/1q845_lozfiepTfGmOOjR46YxkQXISGcK?usp=sharing) if you want to use them.
 
 If you have generated the hash code by the previous step or by other method and want to test the MAP of the hash code. You can specify the code_path parameter.
 ```
